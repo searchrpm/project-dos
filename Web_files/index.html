@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Bootstrap Visualization Dashboard</title>
+
+    <!-- Boostrap Stylesheet -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" media="screen">
+
+    <!-- Our own CSS stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css" media="screen">
+
+  </head>
+
+  <body>
+    <!-- Start of navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container-fluid navbar-custom">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="row">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="col-xs-9 phone-nav">
+              <a class="navbar-brand" href="#" id="logo">UFC Fighters</a>
+            </div>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right navbar-right-custom">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">UFC Data <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="visualizations/wind.html">UFC GEO</a></li>
+                 <li><a href="visualizations/temp.html">UFC Ages</a></li>
+                  <li><a href="visualizations/humidity.html">UFC Winners</a></li>
+                  <li><a href="visualizations/index.html">Approach</a></li>
+                </ul>
+              </li>
+              
+          </div><!-- /.navbar-collapse -->
+        </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+    <!-- End of navbar -->
+
+    <!-- Start of container -->
+    <div class="container">
+      <section class="row">
+        <div class="col-md-8">
+          <article class="description-content">
+            <h1 class="description-header">UFC Fighter Analysis Approach</h1>
+            <hr class="description-hr"/>
+            <p>The purpose of this project was to get an understanding of fighter profiles from the UFC. We wanted to know which countries produced the most fighters, their age, wins and loss averages and see if there are any insights we can gleam from the data. </p>
+            <p><strong> Step #1. Gather Data Sources:</strong></p>
+            <img src="assets/images/kaggle.png" alt="" class="img-responsive"/>
+            <p>Some of our data sources were from Kaggle, Wikipedia and Reddit. Below are some of our main data sources</p>
+            <a href="https://www.kaggle.com/rajeevw/ufcdata#data.csv">Kaggle - UFC-Fight historical data (1,300 - 1,700 Records)</a><br>
+            <a href="https://en.wikipedia.org/wiki/List_of_current_UFC_fighters">UFC Wikipedia Page (hundreds of records)</a><br>
+
+            <p><strong>Step #2. Shhhh. Scrape Data</strong></p>
+            <img src="assets/images/wiki_data.png" alt="" class="img-responsive"/>
+            <p>In order to gather data from Wikipedia, we used PyMongo and BeautifulSoup in Python. The country flag caused issues crawling the page with Pandas. </p>
+            <a href="https://en.wikipedia.org/wiki/List_of_current_UFC_fighters">Wikipedia (100+ Records)</a><br>
+
+            <p><strong>Step #3. Build Analysis & Visualize Data</strong></p>
+            <img src="assets/images/scrape_data.png" alt="" class="img-responsive"/>
+            <img src="assets/images/data_viz.png" alt="" class="img-responsive"/>
+            <p>Once we had our data, we were able to clean it, push to mongoDB and then decide which method to best visualize (Tableau).  </p>
+
+
+
+          </article>
+        </div>
+        <div class="col-md-4">
+
+
+          <!-- Start of Visualizations imageNav Area -->
+          <section id="imageNav-area">
+            <div class="imageNav-content">
+              <h2 class="imageNav-header">Fighter Insights</h2>
+              <hr />
+              <div id="images">
+                <a href="visualizations/wind.html"><img src="assets/images/fighter_geo.png" alt="fighter geo profile" class="imageNav-photo"></a>
+                <a href="visualizations/temp.html"><img src="assets/images/min_max_age.png" alt="min and max age" class="imageNav-photo"></a>
+                <a href="visualizations/humidity.html"><img src="assets/images/fighter_winners.png" alt="ufc fighter analysis" class="imageNav-photo"></a>
+                <a href="index.html"><img src="assets/images/kaggle.png" alt="Latitude vs. Cloudiness" class="imageNav-photo"></a>
+              </div>
+            </div>
+          </section>
+          <!-- End of the Visualizations imageNav Area -->
+
+        </div>
+      </section>
+    </div>
+    <!-- End of container -->
+
+    <!-- Start of footer -->
+    <footer class="footer navbar-fixed-bottom">
+      <div class="two-toned-footer-color"></div>
+      <p class="text-muted text-muted-footer text-center">
+        &copy; Copyright 2019
+      </p>
+    </footer>
+    <!-- End of footer -->
+
+    <!-- jQuery CDN -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Bootstrap CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  </body>
+
+</html>
